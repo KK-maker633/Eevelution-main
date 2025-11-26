@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Eevee and its Evolutions</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Pokédex</a>
+    <a href="#">Quiz</a>
+    <a href="#">About</a>
+  </nav>
+
+  <!-- Title -->
+  <h1>
+    <span class="heart">💗</span>
+    Eevee and its Evolutions
+    <span class="heart">💗</span>
+  </h1>
+
+  <div class="container">
+
+    <!-- Eeveelution Image Grid -->
+    <div class="grid">
+      <div class="card"><img src="eevee.png"><h3>Eevee</h3><p>#133</p></div>
+      <div class="card"><img src="vaporeon.png"><h3>Vaporeon</h3><p>#134</p></div>
+      <div class="card"><img src="jolteon.png"><h3>Jolteon</h3><p>#135</p></div>
+      <div class="card"><img src="flareon.png"><h3>Flareon</h3><p>#136</p></div>
+      <div class="card"><img src="espeon.png"><h3>Espeon</h3><p>#196</p></div>
+      <div class="card"><img src="umbreon.png"><h3>Umbreon</h3><p>#197</p></div>
+      <div class="card"><img src="leafeon.png"><h3>Leafeon</h3><p>#470</p></div>
+      <div class="card"><img src="glaceon.png"><h3>Glaceon</h3><p>#471</p></div>
+      <div class="card"><img src="sylveon.png"><h3>Sylveon</h3><p>#700</p></div>
+    </div>
+
+    <!-- QUIZ BOX -->
+    <div id="quizBox">
+      <h2>Which Eeveelution Are You?</h2>
+      <div id="quizContent"></div>
+      <button id="resetBtn">Restart Quiz</button>
+    </div>
+
+  </div>
+
+<script>
+// Quiz Questions
+const quiz = [
+  { q: "What time of day do you like?", a: ["morning","afternoon","night"] },
+  { q: "What is your favourite colour?", a: ["pink","sky blue","blue","green","brown","yellow","red","black","purple"] },
+  { q: "What is your favourite type?", a: ["ice","fairy","dark","psychic","grass","water","electric","fire","normal"] }
+];
+
+// Eeveelution Results
+const results = {
+  glaceon:  {time:"night",      color:"sky blue", type:"ice"},
+  leafeon:  {time:"afternoon",  color:"green",    type:"grass"},
+  eevee:    {time:"morning",    color:"brown",    type:"normal"},
+  sylveon:  {time:"afternoon",  color:"pink",     type:"fairy"},
+  espeon:   {time:"afternoon",  color:"purple",   type:"psychic"},
+  umbreon:  {time:"night",      color:"black",    type:"dark"},
+  flareon:  {time:"morning",    color:"red",      type:"fire"},
+  jolteon:  {time:"morning",    color:"yellow",   type:"electric"},
+  vaporeon: {time:"morning",    color:"blue",     type:"water"}
+};
+
+let step = 0;
+let answers = { time: null, color: null, type: null };
+
+const quizContent = document.getElementById("quizContent");
+const resetBtn = document.getElementById("resetBtn");
+
+function renderQuestion() {
+  quizContent.innerHTML = "";
+
+  const q = document.createElement("p");
+  q.textContent = quiz[step].q;
+  quizContent.appendChild(q);
+
+  quiz[step].a.forEach(option => {
+    const btn = document.createElement("button");
+    btn.className = "answerBtn";
+    btn.textContent = option;
+    btn.onclick = () => choose(option);
+    quizContent.appendChild(btn);
+  });
+}
+
+function choose(option) {
+  if (step === 0) answers.time = option;
+  if (step === 1) answers.color = option;
+  if (step === 2) answers.type = option;
+
+  step++;
+  if (step < quiz.length) renderQuestion();
+  else showResult();
+}
+
+function showResult() {
+  let match = "eevee"; // fallback
+
+  for (const evo in results) {
+    const r = results[evo];
+    if (r.time === answers.time &&
+        r.color === answers.color &&
+        r.type === answers.type) {
+      match = evo;
+      break;
+    }
+  }
+
+  quizContent.innerHTML = `<p>You are <strong>${match.toUpperCase()}</strong>!</p>`;
+  resetBtn.style.display = "block";
+}
+
+resetBtn.onclick = () => {
+  step = 0;
+  answers = { time:null, color:null, type:null };
+  resetBtn.style.display = "none";
+  renderQuestion();
+};
+
+renderQuestion();
+</script>
+
+</body>
+</html>
