@@ -1,3 +1,4 @@
+/* BASIC PAGE */
 body {
   margin: 0;
    font-family: "Comic Sans MS", "Comic Sans", cursive;
@@ -233,26 +234,25 @@ button:hover {
 .review-stars {
     font-size: 25px;
     color: gold;
-}
-body {
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  font-family: "Comic Sans MS", cursive;
-}
-
-.thankyou-container {
+/* Thank You Section */
+.thankyou-section {
   text-align: center;
-  animation: fadeIn 1.5s ease forwards;
+  margin-top: 60px;
+  animation: fadeIn 1.2s ease forwards;
 }
 
+.thankyou-section h2 {
+  font-family: "Comic Sans MS", cursive;
+  font-size: 36px;
+  margin-top: 15px;
+  color: #6c63ff; /* lavender-navy */
+}
+
+/* Image animation */
 .thankyou-img {
-  width: 300px;
-  animation: slideIn 1.3s ease-out forwards;
+  width: 260px;
   opacity: 0;
+  animation: slideIn 1.3s ease-out forwards;
 }
 
 /* Slide in from left */
@@ -267,14 +267,8 @@ body {
   }
 }
 
-/* Fade text */
+/* Fade-in container */
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
-}
-
-h1 {
-  font-size: 40px;
-  margin-top: 20px;
-  color: #8657ff; /* lavender-navy color */
 }
