@@ -234,3 +234,47 @@ button:hover {
     font-size: 25px;
     color: gold;
 }
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  font-family: "Comic Sans MS", cursive;
+}
+
+.thankyou-container {
+  text-align: center;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+.thankyou-img {
+  width: 300px;
+  animation: slideIn 1.3s ease-out forwards;
+  opacity: 0;
+}
+
+/* Slide in from left */
+@keyframes slideIn {
+  0% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Fade text */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+h1 {
+  font-size: 40px;
+  margin-top: 20px;
+  color: #8657ff; /* lavender-navy color */
+}
