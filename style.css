@@ -1,0 +1,102 @@
+/* BASIC PAGE */
+body {
+  margin: 0;
+   font-family: "Comic Sans MS", "Comic Sans", cursive;
+  background: linear-gradient(#ffeaf7, #fff);
+}
+
+/* NAVIGATION */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px;
+  background: white;
+  border-bottom: 3px solid gray;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  color: black;
+}
+
+/* TITLE */
+h1 {
+  text-align: center;
+  font-size: 40px;
+  margin-top: 20px;
+  color: black;
+}
+
+/* MAIN LAYOUT */
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 40px;
+}
+
+/* GRID OF IMAGES */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 160px);
+  gap: 20px;
+}
+
+.card {
+  text-align: center;
+  padding: 10px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+/* QUIZ BOX */
+#quizBox {
+  width: 280px;
+  padding: 20px;
+  background: #cffbff;           /* pale aqua */
+  border-radius: 20px;
+  box-shadow: 0 0 20px #a5f6ff;  /* glowing aqua */
+}
+
+#quizBox h2 {
+  text-align: center;
+}
+
+/* Quiz Buttons */
+.answerBtn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #ffffff;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.answerBtn:hover {
+  background: #e8ffff;
+}
+
+#resetBtn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #ffd1ec;
+  display: none;
+}
