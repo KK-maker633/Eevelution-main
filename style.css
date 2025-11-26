@@ -140,3 +140,97 @@ h1 {
   justify-content: center;
   width: 100%;
 }
+body {
+    font-family: "Comic Sans MS", cursive;
+    background: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    padding: 20px;
+    background: #b3c7ff;
+    color: navy;
+}
+
+/* Review Box */
+.review-container {
+    width: 80%;
+    margin: auto;
+    padding-top: 20px;
+}
+
+.review-box {
+    border: 2px solid #87CEEB;
+    border-radius: 10px;
+    padding: 20px;
+    width: 60%;
+    margin: auto;
+    background: #e6f5ff;
+}
+
+.review-box h2 {
+    color: navy;
+}
+
+/* Stars */
+.stars span {
+    font-size: 35px;
+    cursor: pointer;
+    color: gray;
+}
+
+.stars span.active {
+    color: gold;
+}
+
+/* Comment box */
+textarea {
+    width: 90%;
+    height: 100px;
+    margin-top: 15px;
+    padding: 10px;
+    font-family: inherit;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 2px solid #87CEEB;
+}
+
+/* Button */
+button {
+    margin-top: 15px;
+    padding: 10px 25px;
+    font-size: 18px;
+    background: #87CEEB;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: navy;
+}
+
+button:hover {
+    background: #6bb3d6;
+}
+
+/* Displayed Reviews */
+.review-title {
+    margin-top: 40px;
+    color: navy;
+}
+
+.review-entry {
+    background: #f0f8ff;
+    border: 2px solid #87CEEB;
+    margin: 15px auto;
+    padding: 15px;
+    width: 60%;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.review-stars {
+    font-size: 25px;
+    color: gold;
+}
